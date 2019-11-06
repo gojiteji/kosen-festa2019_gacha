@@ -22,6 +22,8 @@ function recomend() {
     try {
         fetchJSONFile('https://gojiteji.github.io/kosen-festa2019_gacha/data.json', function (data) {
             console.log(data);
+            console.log(data[0]);
+            console.log(data["剣道部"]);
         });
 
         document.getElementById("menu").innerHTML = data;
