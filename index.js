@@ -20,13 +20,13 @@ function fetchJSONFile(path, callback) {
 function recomend() {
     price = document.getElementById("price").value;
     try {
-        fetchJSONFile('./data.json', function (data) {
+        fetchJSONFile('https://gojiteji.github.io/kosen-festa2019_gacha/data.json', function (data) {
             alert(data);
         });
 
         document.getElementById("menu").innerHTML = data;
     }
     catch (e) {
-        alert("エラー! 入力をよく確認してくれ!");
+        //alert("エラー! 入力をよく確認してくれ!");
     }
 }
