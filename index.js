@@ -21,9 +21,9 @@ function recomend() {
     price = document.getElementById("price").value;
     try {
         fetchJSONFile('https://gojiteji.github.io/kosen-festa2019_gacha/data.json', function (data) {
-            console.log(data[0]);
-            console.log(data[0][0]);
-            console.log(data[0]['剣道部']);
+            console.log(JSON.stringify(data[0]));
+            console.log(JSON.stringify(data[0][0]));
+            console.log(JSON.stringify(data[0]['剣道部']));
         });
 
         document.getElementById("menu").innerHTML = data;
