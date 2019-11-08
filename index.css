@@ -2,7 +2,8 @@ body{
     font-family: 'Titillium Web', sans-serif;
     background-color: #aaa;
     overflow-x: hidden;
-
+    width: 100vw;
+    height: 100vh;
 }
 h4{font-family: 'Titillium Web', sans-serif;
     color:#484;
