@@ -1,9 +1,9 @@
 
 
-num=0
+num=0;
 bagage=0;
 printed = false;
-price=0
+price=0;
 
 
 function fetchJSONFile(path, callback) {
@@ -48,6 +48,8 @@ function change_color(id_) {
 }
 
 function recomend() {
+    num=0;
+    bagage=0;
     document.getElementById("bottom_title").innerHTML = "食べたものはタップしよう!";
     printed = true;
     price = document.getElementById("price").value;
@@ -94,7 +96,7 @@ function recomend() {
                 if (bag.length > 3) {
                     menu = menu + "など"
                 }
-                tweet = "location.href='https://twitter.com/share?url=https://gojiteji.github.io/kosen-festa2019_gacha/&text=" + menu + "を食べるよ😋\\n" + "&hashtags=KOSENFESTA'"
+                tweet = "location.href='https://twitter.com/share?url=https://gojiteji.github.io/kosen-festa2019_gacha/&text=" + menu + "を食べるよ😋" + "&hashtags=KOSENFESTA'"
                 document.getElementById("twb").onclick = new Function(tweet);
                 text = text + "</h4><h2>総額：" + (price - current_price).toString() + "円</h2>";
                 document.getElementById("menu").innerHTML = text;
