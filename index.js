@@ -1,7 +1,7 @@
 
 
 
-
+printed = false;
 function fetchJSONFile(path, callback) {
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
@@ -18,6 +18,7 @@ function fetchJSONFile(path, callback) {
 
 
 function recomend() {
+    printed = true;
     price = document.getElementById("price").value;
     bag = [];
     try {
@@ -31,6 +32,7 @@ function recomend() {
                 if (current_price >= obj[id].price) {
                     current_price = current_price - obj[id].price;
                     bag.push(id);
+
                 }
 
                 if (current_price < 50) {
@@ -38,12 +40,19 @@ function recomend() {
                 }
             }
 
-            text = "";
+
+
+
+
+
+            text = "<h4>";
             for (i = 0; i < bag.length; i++) {
-                text = text + obj[(bag[i])].group.toString() + " " + obj[(bag[i])].food.toString() + " " + obj[(bag[i])].price.toString() + "円<br>";
+                text = text + "<div class=\"ui card \" id= \"" + i + "\"><div class=\"content\"><div class=\"header\">"
+                    + obj[(bag[i])].food.toString() + "<\/div><div class=\"meta\">" + obj[(bag[i])].group.toString() + "<\/div><div class=\"description\">"
+                    + obj[(bag[i])].price.toString() + "円" + "</div></div></div>";
             }
 
-            text = text + "総額：" + (price - current_price).toString() + "円";
+            text = text + "</h4><h2>総額：" + (price - current_price).toString() + "円</h2>";
             document.getElementById("menu").innerHTML = text;
 
         });
@@ -52,3 +61,11 @@ function recomend() {
         //alert("エラー! 入力をよく確認してくれ!");
     }
 }
+
+var cards = document.getElementsByClassName("card");
+for (var i = 0; i < cards.length; i++) {
+    console.log("a");
+    cards[i].onclick = function () {
+        alert(i," is clicked Finaly!");
+    }
+};

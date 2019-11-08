@@ -1,0 +1,21 @@
+body{
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #aaa;
+
+}
+h4{font-family: 'Titillium Web', sans-serif;
+    color:#484;
+}
+h2{
+    color: brown;
+}
+h1{
+    font-size: 80em ;
+}
+
+
+
+  .ui.dark.card {
+    background:#DDD;
+  }
+  
