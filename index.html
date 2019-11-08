@@ -16,7 +16,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
-<script type="text/javascript" src="index.js"></script>
+
 
 <body>
 
@@ -25,14 +25,16 @@
     <center>
 
 
-
+<br>
         <h1>menu gacha</h1>
 
 
         <br> <br>
 
-        <div class="ui input focus">
-            <input placeholder="50円以上を入力" id="price" type="tel" min="0" step="1" name="cost" size="30" maxlength="4">
+        <div class="ui left labeled input ">
+                <label for="amount" class="ui label">¥</label>
+            <input placeholder="50~9999を入力" id="price" type="tel" min="0" step="1" name="cost" size="30" maxlength="4">
+
         </div>
         <button class="ui primary button" onclick="recomend()">
             ガチャを回す </button>
@@ -41,10 +43,10 @@
 
         <a id="menu"></a>
 <br>
-    <button class="ui basic icon button" data-content="ソースコードを見る" onclick="location.href='https://github.com/gojiteji/kosen-festa2019_gacha'">
+    <button class="ui basic icon button" data-tooltip="ソースコードを見る" onclick="location.href='https://github.com/gojiteji/kosen-festa2019_gacha'">
         <i class="github black large icon"></i>
       </button>
-      <button class="ui basic icon button" data-content="メニューをツイート" onclick="location.href='https://github.com/gojiteji/kosen-festa2019_gacha'">
+      <button class="ui basic icon button" data-tooltip="メニューをツイート" onclick="location.href='https://twitter.com/share?url=https://gojiteji.github.io/kosen-festa2019_gacha/&text=さんぷる&hashtags=鈴鹿高専祭'">
         <i class="twitter blue large icon"></i>
       </button>
 
@@ -68,5 +70,5 @@
 　　＼￣￣￣＼
 　　　 ￣￣￣￣    
 --->
-
+<script type="text/javascript" src="index.js"></script>
 </html>
