@@ -64,7 +64,7 @@ function change_color(id_) {
             $('.card').css({
                 background: "-webkit-gradient(linear, right top, left bottom, from(#38C0D4), to(#E49aF4))" 
             })
-            document.getElementById("bottom_title").innerHTML = "COMPLETE!";
+            document.getElementById("bottom_title").innerHTML = "COMPLETED!";
             tweet = "location.href='https://twitter.com/share?url=https://eq.gojiteji.com/&text=" + menu + "を食べたよ!🤩" + "&hashtags=KOSENFESTA'"
             document.getElementById("twb").onclick = new Function(tweet);
         }
