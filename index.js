@@ -96,7 +96,7 @@ function recomend() {
                 if (bag.length > 3) {
                     menu = menu + "など"
                 }
-                tweet = "location.href='https://twitter.com/share?url=https://gojiteji.github.io/kosen-festa2019_gacha/&text=" + menu + "を食べるよ😋" + "&hashtags=KOSENFESTA'"
+                tweet = "location.href='https://twitter.com/share?url=https://eq.gojiteji.com/&text=" + menu + "を食べるよ😋" + "&hashtags=KOSENFESTA'"
                 document.getElementById("twb").onclick = new Function(tweet);
                 text = text + "</h4><h2>総額：" + (price - current_price).toString() + "円</h2>";
                 document.getElementById("menu").innerHTML = text;
