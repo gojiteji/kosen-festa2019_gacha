@@ -2,8 +2,7 @@ body{
     font-family: 'Titillium Web', sans-serif;
     background-color: #aaa;
     overflow-x: hidden;
-    width: 100vw;
-    height: 100vh;
+    min-width:100%;
 }
 h4{font-family: 'Titillium Web', sans-serif;
     color:#484;
@@ -19,4 +18,5 @@ h1{
   .ui.dark.card {
     background:#DDD;
   }
+
   
