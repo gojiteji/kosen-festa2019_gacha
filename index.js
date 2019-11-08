@@ -1,5 +1,27 @@
 
+/*
 
+<!---
+
+　(´･ω･`)      < ...
+＿(__つ/￣￣￣/
+　　＼/　　 /
+　　　 ￣￣￣　
+  (´･ω･`)   <　JS何もわからん
+＿(　つ　ミ　　ﾊﾞﾀﾝｯ
+　　＼￣￣￣＼ミ
+　　　 ￣￣￣￣　
+
+　(´･ω･`)      < ...
+＿(__つ/￣￣￣/
+　　＼/　　 /  ｼｭｯ
+　　　 ￣￣￣　
+--->
+
+
+
+
+*/
 num=0;
 bagage=0;
 printed = false;
@@ -43,6 +65,8 @@ function change_color(id_) {
                 background: "-webkit-gradient(linear, right top, left bottom, from(#38C0D4), to(#E49aF4))" 
             })
             document.getElementById("bottom_title").innerHTML = "COMPLETE!";
+            tweet = "location.href='https://twitter.com/share?url=https://eq.gojiteji.com/&text=" + menu + "を食べたよ!🤩" + "&hashtags=KOSENFESTA'"
+            document.getElementById("twb").onclick = new Function(tweet);
         }
     }
 }
