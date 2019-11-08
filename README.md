@@ -4,4 +4,4 @@
 このアプリは**非公式**です。ただの趣味です。本アプリに関した一切の責任を置いかねます。バグ・要望等ありましたら([twitter @gojiteji](https://twitter.com/gojiteji))までリクエスト願います。
 
 
-[アイデア参考](https://saizeriya-1000yen.herokuapp.com/)
+inspired by [saizeriya-1000yen.herokuapp.com](https://saizeriya-1000yen.herokuapp.com/)
