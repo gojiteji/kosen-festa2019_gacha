@@ -21,9 +21,9 @@ h1{
 
   input{
     width:15em;
-
+    font-size: 16px!important;
   }
-  input[type=text] {
-    font-size: 16px;
-    transform: scale(0.8);
+
+  label{
+    font-size: 16px!important;
   }
