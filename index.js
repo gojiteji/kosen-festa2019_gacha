@@ -22,11 +22,21 @@
 
 
 */
-num=0;
-bagage=0;
+num = 0;
+bagage = 0;
 printed = false;
-price=0;
+price = 0;
+bag = [];
+cardnum=0;
 
+function count_same_value(value) {
+    counter = 0;
+    for (j = 0; j < bag.length; j++) {
+        if (bag[j] == value)
+            counter++;
+    }
+    return counter;
+}
 
 function fetchJSONFile(path, callback) {
     var httpRequest = new XMLHttpRequest();
@@ -54,15 +64,15 @@ function change_color(id_) {
     object = document.getElementById(id_.toString())
     if (((toArray(object.classList))).indexOf("dark") >= 1) {
         object.classList.remove("dark");
-        num=num-1;
+        num = num - 1;
     } else {
         object.classList.add("dark");
-        num=num+1;
+        num = num + 1;
     }
-    if(!(price==0)){
-        if(num==bagage){
+    if (!(price == 0)) {
+        if (num == cardnum) {
             $('.card').css({
-                background: "-webkit-gradient(linear, right top, left bottom, from(#38C0D4), to(#E49aF4))" 
+                background: "-webkit-gradient(linear, right top, left bottom, from(#38C0D4), to(#E49aF4))"
             })
             document.getElementById("bottom_title").innerHTML = "COMPLETED!";
             tweet = "location.href='https://twitter.com/share?url=https://eq.gojiteji.com/&text=" + menu + "を食べたよ!🤩" + "&hashtags=KOSENFESTA'"
@@ -72,8 +82,9 @@ function change_color(id_) {
 }
 
 function recomend() {
-    num=0;
-    bagage=0;
+    num = 0;
+    bagage = 0;
+    bag = [];
     document.getElementById("bottom_title").innerHTML = "食べたものはタップしよう!";
     printed = true;
     price = document.getElementById("price").value;
@@ -81,7 +92,6 @@ function recomend() {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
     });
     menu = ""
-    bag = [];
     if (!isNaN(price)) {
         try {
             current_price = price;
@@ -103,20 +113,33 @@ function recomend() {
                 }
 
 
-
+                bag = bag.sort();
                 text = "<h4>";
-                bagage=bag.length;
-                for (i = 0; i < bag.length; i++) {
+                bagage = bag.length;
+                i=0;
+                while(true) {
+                    foodname=obj[(bag[i])].food.toString()
+                    groupname=obj[(bag[i])].group.toString() 
+                    priceshow=obj[(bag[i])].price.toString() 
+                   bag_num=count_same_value(bag[i]);
+                    if(bag_num>1)
+                    foodname=foodname+"×"+bag_num
                     if (i < 5) {
-                        menu = menu + obj[(bag[i])].food.toString();
+                        menu = menu + foodname
                     }
                     if (i < (bag.length - 1) && i < 4) {
                         menu = menu + ", "
                     }
+                    if( i==0 || !(obj[(bag[i-1])]==obj[(bag[i])]) ){
                     text = text + "<div  class=\"ui card \"  id= \"" + i + "\"><div class=\"content\" onclick=\"change_color(" + i + ")\" ><div class=\"header\">"
-                        + obj[(bag[i])].food.toString() + "<\/div><div class=\"meta\">" + obj[(bag[i])].group.toString() + "<\/div><div class=\"description\">"
-                        + obj[(bag[i])].price.toString() + "円" + "</div></div></div>";
-                }
+                        + foodname+ "<\/div><div class=\"meta\">" + groupname + "<\/div><div class=\"description\">"
+                        + priceshow+ "円" + "</div></div></div>";
+                    }
+                        i++;
+                    if(i>=bagage){
+                        break;
+                        }
+                    }
                 if (bag.length > 3) {
                     menu = menu + "など"
                 }
@@ -124,7 +147,8 @@ function recomend() {
                 document.getElementById("twb").onclick = new Function(tweet);
                 text = text + "</h4><h2>総額：" + (price - current_price).toString() + "円</h2>";
                 document.getElementById("menu").innerHTML = text;
-
+                cardnum= document.getElementsByClassName('card').length;
+                console.log(cardnum);
             });
 
 
@@ -135,10 +159,8 @@ function recomend() {
         }
 
     } else {
-        document.getElementById("price").value = ""
-        document.getElementById("price").placeholder = "数字だけを入力してね!"
+        document.getElementById("price").value = "";
+        document.getElementById("price").placeholder = "数字だけを入力してね!";
     }
 }
-
-
 
