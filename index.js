@@ -67,7 +67,9 @@ function change_color(id_) {
         object.classList.remove("dark");
         num = num - 1;
     } else {
+        if(!(num == cardnum-1)){//最後の一個でなければ
         $('#'+id_).transition('pulse');
+        }
         object.classList.add("dark");
         num = num + 1;
     }
@@ -155,7 +157,7 @@ function recomend() {
                 text = text + "</h4><h2>総額：" + (price - current_price).toString() + "円</h2>";
                 document.getElementById("menu").innerHTML = text;
                 for(i=0;i<bagage;i++){
-                    console.log(i)
+
                     $('#'+i).transition('pulse');
                 }
                 cardnum= document.getElementsByClassName('card').length;
