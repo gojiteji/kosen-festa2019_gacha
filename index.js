@@ -122,8 +122,6 @@ function recomend() {
                     groupname=obj[(bag[i])].group.toString() 
                     priceshow=obj[(bag[i])].price.toString() 
                    bag_num=count_same_value(bag[i]);
-                    if(bag_num>1)
-                    foodname=foodname+"×"+bag_num
                     if (i < 5) {
                         menu = menu + foodname
                     }
@@ -133,7 +131,12 @@ function recomend() {
                     if( i==0 || !(obj[(bag[i-1])]==obj[(bag[i])]) ){
                     text = text + "<div  class=\"ui card \"  id= \"" + i + "\"><div class=\"content\" onclick=\"change_color(" + i + ")\" ><div class=\"header\">"
                         + foodname+ "<\/div><div class=\"meta\">" + groupname + "<\/div><div class=\"description\">"
-                        + priceshow+ "円" + "</div></div></div>";
+                        + priceshow+ "円</div></div>";
+                        if(bag_num>1){
+                            text=text+'<div style="font-size: 3em;    position: absolute;    bottom: 0.8em;    right: -1.5em;    color: slateblue; ">×'+bag_num+'</div>';
+                        }
+                        text=text+"</div>";
+                        
                     }
                         i++;
                     if(i>=bagage){
