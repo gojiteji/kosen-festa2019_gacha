@@ -63,14 +63,17 @@ function toArray(arg) {
 function change_color(id_) {
     object = document.getElementById(id_.toString())
     if (((toArray(object.classList))).indexOf("dark") >= 1) {
+        $('#'+id_).transition('pulse');
         object.classList.remove("dark");
         num = num - 1;
     } else {
+        $('#'+id_).transition('pulse');
         object.classList.add("dark");
         num = num + 1;
     }
     if (!(price == 0)) {
         if (num == cardnum) {
+            $('.card').transition('jiggle');
             $('.card').css({
                 background: "-webkit-gradient(linear, right top, left bottom, from(#38C0D4), to(#E49aF4))"
             })
