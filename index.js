@@ -133,7 +133,7 @@ function recomend() {
                         + foodname+ "<\/div><div class=\"meta\">" + groupname + "<\/div><div class=\"description\">"
                         + priceshow+ "円</div></div>";
                         if(bag_num>1){
-                            text=text+'<div style="font-size: 3em;    position: absolute;    bottom: 0.8em;    right: -1.5em;    color: slateblue; ">×'+bag_num+'</div>';
+                            text=text+'<div style="font-size: 3em;    position: absolute;    bottom: 0.8em;    right: -0.5em;    color: slateblue; ">×'+bag_num+'</div>';
                         }
                         text=text+"</div>";
                         
