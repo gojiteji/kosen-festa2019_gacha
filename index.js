@@ -85,6 +85,7 @@ function change_color(id_) {
 }
 
 function recomend() {
+    $('.primary').transition('pulse');
     num = 0;
     bagage = 0;
     bag = [];
@@ -153,6 +154,10 @@ function recomend() {
                 document.getElementById("twb").onclick = new Function(tweet);
                 text = text + "</h4><h2>総額：" + (price - current_price).toString() + "円</h2>";
                 document.getElementById("menu").innerHTML = text;
+                for(i=0;i<bagage;i++){
+                    console.log(i)
+                    $('#'+i).transition('pulse');
+                }
                 cardnum= document.getElementsByClassName('card').length;
             });
 
