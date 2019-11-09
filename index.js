@@ -148,7 +148,6 @@ function recomend() {
                 text = text + "</h4><h2>総額：" + (price - current_price).toString() + "円</h2>";
                 document.getElementById("menu").innerHTML = text;
                 cardnum= document.getElementsByClassName('card').length;
-                console.log(cardnum);
             });
 
 
